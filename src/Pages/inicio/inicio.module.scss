@@ -1,0 +1,137 @@
+.banner {
+    position: relative;
+    width: 100%;
+    margin: 0; 
+  }
+  
+  .imagemBanner {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .bannerText {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 322px;
+    white-space: normal; 
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+
+  @media (max-width: 768px) {
+    .bannerText {
+      font-size: 1.5rem; 
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bannerText {
+      font-size: 1.2rem;
+    }
+  
+    .imagemBanner {
+      max-height: 350px; 
+    }
+  }
+  
+
+
+  .whyDonate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .whyDonate h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #005695;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    align-self: flex-start; 
+  }
+  
+  .reasons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .reason {
+    background-color: rgba(1, 87, 148, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    width: 286px; 
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .reason:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon {
+    width: 100px; 
+    height: 100px; 
+    margin-bottom: 10px;
+  }
+  
+  .reason p {
+    font-size: 1rem;
+    color: #000000; 
+    width: 236px;
+    height: 108px; 
+    margin: 0 auto;
+    text-align: center; 
+  }
+  
+
+  @media (max-width: 1024px) {
+    .reason {
+      width: 45%;
+      height: auto; 
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .reason {
+      width: 90%;
+      height: auto;
+      margin: 10px auto;
+    }
+  
+    .reasons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .whyDonate {
+      align-items: center; 
+    }
+  
+    .whyDonate h2 {
+      align-self: center; 
+    }
+  }
+  
