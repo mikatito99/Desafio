@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png';
 import lupa from '../../assets/lupa.png';
 import banner from '../../assets/banner.png'
 import s from './header.module.scss';
-import Inicio from '../../pages/inicio/Inicio';
+import Inicio from '../../pages/inicio/inicio';
 import Doados from '../../pages/doados/doados';
 import QueroDoar from '../../pages/querodoar/querodoar';
 
