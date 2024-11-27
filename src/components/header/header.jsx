@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import lupa from '../../assets/lupa.png';
-import banner from '../../assets/banner.png'
+import banner from '../../assets/banner.png';
 import s from './header.module.scss';
 import Inicio from '../../pages/inicio/inicio';
 import Doados from '../../pages/doados/doados';
