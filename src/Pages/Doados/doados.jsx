@@ -1,57 +1,43 @@
 import React from 'react';
 import s from './doados.module.scss'; 
+import axios from 'axios';
+import livro from '../../assets/livro.png';
+import { useState ,useEffect} from 'react';
 
 
-const livros = [
-  {
-    titulo: "Dracula",
-    genero: "Terror",
-    autor: "Bram Stoker",
-    capa: "https://m.media-amazon.com/images/I/81kotNTvCJL._AC_UF1000,1000_QL80_.jpg"
-  },
-  {
-    titulo: "Lady Killers",
-    genero: "True Crime",
-    autor: "Tori Telfer",
-    capa: "https://darkside.vtexassets.com/arquivos/ids/169695/251-lady-killers-2.jpg?v=637024569308830000"
-  },
-  {
-    titulo: "A Culpa é Das Estrelas",
-    genero: "Drama",
-    autor: "john green",
-    capa: "https://http2.mlstatic.com/D_NQ_NP_659517-MLU74221499187_012024-O.webp"
-  },
-  {
-    titulo: "A Biblioteca Da Meia Noite",
-    genero: "Ficção Cientifica",
-    autor: "Matt Haig",
-    capa: "https://images-americanas.b2w.io/produtos/01/00/img3/38853570/9/3885357006_4GG.jpg"
-  },
-  {
-    titulo: "O Cavaleiro Andante ",
-    genero: "Alta Fantasia",
-    autor: "George R.R Martin",
-    capa: "https://m.media-amazon.com/images/I/71qNz6f+aYL._AC_UF1000,1000_QL80_.jpg"
-  }
-];
+export default function doados() {  
+  const [lvros, setLivros] = useState([[]]);
+  
+  const getLivros = async () => {
+    const response = await axios.get("https://apilivros-xq63.onrender.com/livros");
+    setLivros(response.data);
+  };
 
-const doados = () => {
+  useEffect(() => {
+    getLivros();
+  }, []);
+
   return (
-    <div className={s.container}>
-      <h2>Livros Doados</h2>
-      <div className={s.listaLivros}>
+    <section>
+      <h2>livros doados</h2>
       
-        {livros.map((livro, index) => (
-          <div key={index} className={s.livroCard}>
-            <img src={livro.capa} alt={livro.titulo} className={s.imagemLivro} />
-            <h3>{livro.titulo}</h3>
-            <p><strong>Gênero:</strong> {livro.genero}</p>
-            <p><strong>Autor:</strong> {livro.autor}</p>
-          </div>
+      <div className={s.boxcard}>
+        <article>
+          <img src={livro} alt=""/>
+          <h3>protagonista</h3>
+          <p>susane</p>
+          <p>Autor</p>
+        </article>
+
+        {lvros.map((item) => (
+          <article>
+            <img src={item.imagem_url} alt=""/>
+            <h3>{item.titulo}</h3>
+            <p>{item.categoria}</p>
+            <p>{item.autor}</p>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default doados;
+}
